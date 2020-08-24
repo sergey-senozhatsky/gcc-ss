@@ -9,12 +9,12 @@ pkgver=11.0.0
 _pkgver=1
 _islver=0.22
 pkgrel=`date +%Y%m%d`
-_snapshot=11-20200816
+_snapshot=11-20200823
 pkgdesc="The GNU Compiler Collection"
 arch=('x86_64')
 license=('GPL' 'LGPL' 'FDL' 'custom')
 url="http://gcc.gnu.org"
-makedepends=('binutils>=2.26' 'libmpc' 'doxygen' 'libxcrypt')
+makedepends=('binutils>=2.26' 'libmpc' 'doxygen')
 checkdepends=('dejagnu' 'inetutils')
 options=('!emptydirs')
 source=(ftp://gcc.gnu.org/pub/gcc/snapshots/${_snapshot}/gcc-${_snapshot}.tar.xz
