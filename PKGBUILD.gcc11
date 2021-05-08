@@ -5,11 +5,11 @@
 # NOTE: libtool requires rebuilt with each new gcc version
 
 pkgname=('gcc' 'gcc-libs')
-pkgver=11.0.1
+pkgver=11.1.1
 _pkgver=1
 _islver=0.23
 pkgrel=`date +%Y%m%d`
-_snapshot=11-20210321
+_snapshot=11-20210501
 pkgdesc="The GNU Compiler Collection"
 arch=('x86_64')
 license=('GPL' 'LGPL' 'FDL' 'custom')
@@ -70,8 +70,8 @@ build() {
 	CFLAGS=${CFLAGS/-pipe/}
 	CXXFLAGS=${CXXFLAGS/-pipe/}
 
-	CFLAGS="$CFLAGS -O2 -D_FORTIFY_SOURCE=2"
-	CPPFLAGS="$CPPFLAGS -O2 -D_FORTIFY_SOURCE=2"
+	CFLAGS="$CFLAGS -O2 -D_FORTIFY_SOURCE=2 -Wno-format-security"
+	CPPFLAGS="$CPPFLAGS -O2 -D_FORTIFY_SOURCE=2 -Wno-format-security"
 	CXXFLAGS="$CXXFLAGS -O2" # -D_FORTIFY_SOURCE=2"
 
 	${srcdir}/${_basedir}/configure --prefix=/usr \
